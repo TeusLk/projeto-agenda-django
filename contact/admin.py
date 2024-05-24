@@ -12,4 +12,11 @@ class ContactAdmin(admin.ModelAdmin):
     list_per_page = 10 # Quantas linhas eu quero na tabela
     list_max_show_all = 100 # Maximo de linhas que eu quero na tabela 
     #list_editable = 'first_name', 'last_name' # Edita o valor direto na tabela
-    list_display_links = ('id','first_name', 'last_name', 'phone') 
+    list_display_links = ('id','first_name', 'last_name', 'phone')
+
+
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = 'name', # Lista do que aparecer no campo de ADM do Django
+    ordering = '-id', # Ordena a pelo o que vc quer a tabela 
+   
